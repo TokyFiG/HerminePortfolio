@@ -1,901 +1,736 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Toky | Portfolio</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hermine Patricia – Intégratrice Web</title>
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+  <style>
+    :root {
+      --brand: #7c3d12;
+      --accent: #d97706;
+      --light-bg: #fef9f5;
+      --dark: #1c0a00;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark);
+    }
+    h1, h2, h3, .display-font {
+      font-family: 'Playfair Display', serif;
+    }
 
-    <!-- Icon Font Stylesheet -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background-color: var(--brand) !important;
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff !important;
+      letter-spacing: 0.5px;
+    }
+    .navbar-toggler {
+      border-color: rgba(255,255,255,0.4);
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .nav-link {
+      color: rgba(255,255,255,0.85) !important;
+      font-size: 0.92rem;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: #fff !important; }
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    /* ===== HERO ===== */
+    .hero {
+      background-color: var(--brand);
+      color: #fff;
+      padding: 90px 0 70px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      color: #fff;
+    }
+    .hero .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    .hero .lead {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      max-width: 520px;
+    }
+    .hero .badge-pill {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      display: inline-block;
+    }
+    .hero-img-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-img-wrapper img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,0.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+    .hero-img-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255,255,255,0.3);
+    }
+    .btn-hero {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 28px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .btn-hero:hover { opacity: 0.85; color: #fff; }
+    .btn-hero-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50px;
+      padding: 10px 28px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn-hero-outline:hover { background: rgba(255,255,255,0.1); color: #fff; }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    /* ===== SECTIONS ===== */
+    section { padding: 70px 0; }
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--brand);
+      margin-bottom: 0;
+    }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 14px 0 36px;
+    }
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
-  </head>
+    /* ===== EXPERIENCE CARDS ===== */
+    .exp-card {
+      border: none;
+      border-left: 4px solid var(--brand);
+      background: #fff;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 2px 12px rgba(124,61,18,0.07);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .exp-card:hover {
+      box-shadow: 0 6px 24px rgba(124,61,18,0.14);
+      transform: translateY(-2px);
+    }
+    .exp-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .badge-duration {
+      background: #fef3c7;
+      color: #92400e;
+      border-radius: 50px;
+      padding: 3px 12px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
 
-  <body>
-    
+    /* ===== SKILL BADGES ===== */
+    .skill-badge {
+      background: #fff;
+      border: 2px solid var(--brand);
+      color: var(--brand);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s;
+    }
+    .skill-badge:hover {
+      background: var(--brand);
+      color: #fff;
+    }
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
-      <div class="row gx-0 d-none d-lg-flex">
-        <div class="col-lg-7 px-5 text-start">
-          <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-            <small class="fa fa-map-marker-alt text-primary me-2"></small>
-            <small>Lot IVB 368 AMbohimanala</small>
-          </div>
-          <div class="h-100 d-inline-flex align-items-center py-3">
-            <small style="display: none;" class="far fa-clock text-primary me-2"></small>
-            <small></small>
+    /* ===== FORMATION TIMELINE ===== */
+    .timeline { position: relative; padding-left: 30px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--brand), var(--accent));
+      border-radius: 2px;
+    }
+    .timeline-item { position: relative; margin-bottom: 28px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 3px var(--accent);
+    }
+    .timeline-year {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .timeline-title {
+      font-weight: 600;
+      color: var(--brand);
+      font-size: 0.95rem;
+    }
+    .timeline-sub {
+      font-size: 0.83rem;
+      color: #888;
+    }
+
+    /* ===== LANGUE ===== */
+    .lang-bar-wrap {
+      height: 6px;
+      background: #e8ddd8;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .lang-bar { height: 100%; border-radius: 3px; background: var(--brand); }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      background: var(--brand);
+      color: #fff;
+    }
+    .contact-section .section-title { color: #fff; }
+    .contact-item {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 18px 22px;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: background 0.2s;
+    }
+    .contact-item:hover { background: rgba(255,255,255,0.18); }
+    .contact-item a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.82rem;
+      padding: 20px 0;
+    }
+
+    /* ===== SOFT SKILLS ===== */
+    .soft-badge {
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      color: #fff;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    @media (max-width: 576px) {
+      .hero { padding: 60px 0 50px; }
+      .hero-img-wrapper img { width: 150px; height: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">HP. Andrianarilanto</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#about">Profil</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Expérience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+        <li class="nav-item"><a class="nav-link" href="#formation">Formation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-7 order-2 order-lg-1">
+        <p class="subtitle mb-3"><i class="bi bi-code-slash me-2"></i>Intégratrice Web</p>
+        <h1>Hermine Patricia<br>Andrianarilanto</h1>
+        <p class="lead my-4">Passionnée par la transformation de maquettes Figma en interfaces web modernes, fonctionnelles et élégantes grâce à HTML5 & CSS3.</p>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="badge-pill"><i class="bi bi-code me-1"></i> HTML / CSS3</span>
+          <span class="badge-pill"><i class="bi bi-bootstrap me-1"></i> Bootstrap</span>
+          <span class="badge-pill"><i class="bi bi-vector-pen me-1"></i> Figma</span>
+          <span class="badge-pill"><i class="bi bi-laptop me-1"></i> Télétravail</span>
+        </div>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#contact" class="btn btn-hero">
+            <i class="bi bi-envelope me-2"></i>Me contacter
+          </a>
+          <a href="#experience" class="btn btn-hero-outline">
+            <i class="bi bi-briefcase me-2"></i>Voir mon travail
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 order-1 order-lg-2 text-center">
+        <div class="hero-img-wrapper d-inline-block">
+          <!-- Photo placeholder (photo du CV) -->
+          <img src="data:image/jpeg;base64,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" alt="Hermine Patricia Andrianarilanto"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <p class="section-label">À propos</p>
+        <h2 class="section-title">Mon Profil</h2>
+        <div class="divider mx-auto"></div>
+        <p class="fs-5 text-muted lh-lg">
+          Intégratrice web avec plusieurs mois d'expérience, je recherche un poste me permettant de <strong>concevoir, développer et optimiser</strong> des solutions web efficaces, tout en renforçant mes compétences techniques et en apportant une réelle valeur aux projets de l'entreprise.
+        </p>
+      </div>
+    </div>
+    <!-- Stats rapides -->
+    <div class="row gy-4 mt-4 text-center">
+      <div class="col-6 col-md-3">
+        <div class="p-3 rounded-3 bg-light">
+          <div class="fs-1 fw-bold" style="color:var(--brand)">6+</div>
+          <div class="text-muted small">Mois d'expérience</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-3 rounded-3 bg-light">
+          <div class="fs-1 fw-bold" style="color:var(--brand)">2</div>
+          <div class="text-muted small">Entreprises</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-3 rounded-3 bg-light">
+          <div class="fs-1 fw-bold" style="color:var(--brand)">3</div>
+          <div class="text-muted small">Langues</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-3 rounded-3 bg-light">
+          <div class="fs-1 fw-bold" style="color:var(--brand)">∞</div>
+          <div class="text-muted small">Autodidacte</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Parcours</p>
+    <h2 class="section-title">Expérience Professionnelle</h2>
+    <div class="divider"></div>
+
+    <div class="row gy-4">
+      <!-- NEXA -->
+      <div class="col-12">
+        <div class="exp-card card p-4">
+          <div class="d-flex flex-wrap align-items-start gap-3">
+            <div class="exp-icon"><i class="bi bi-globe"></i></div>
+            <div class="flex-grow-1">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                <h5 class="mb-0 fw-bold" style="color:var(--brand)">Intégratrice Web</h5>
+                <span class="badge-duration"><i class="bi bi-clock me-1"></i>3 mois</span>
+              </div>
+              <p class="text-muted mb-2 fw-500"><i class="bi bi-building me-1"></i>NEXA</p>
+              <p class="mb-2 text-muted small"><i class="bi bi-geo-alt me-1"></i>Télétravail</p>
+              <p class="mb-3">Intégration et transformation de maquettes <strong>Figma</strong> en interfaces web fonctionnelles en utilisant <strong>HTML5 et CSS3</strong>.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border">HTML5</span>
+                <span class="badge bg-light text-dark border">CSS3</span>
+                <span class="badge bg-light text-dark border">Figma</span>
+                <span class="badge bg-light text-dark border">Télétravail</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-lg-5 px-5 text-end">
-          <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-            <small class="fa fa-phone-alt text-primary me-2"></small>
-            <small>+261 38 68 820 96</small>
+      </div>
+
+      <!-- ANIMA -->
+      <div class="col-12">
+        <div class="exp-card card p-4">
+          <div class="d-flex flex-wrap align-items-start gap-3">
+            <div class="exp-icon"><i class="bi bi-laptop"></i></div>
+            <div class="flex-grow-1">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                <h5 class="mb-0 fw-bold" style="color:var(--brand)">Stagiaire en Intégration Web</h5>
+                <span class="badge-duration"><i class="bi bi-clock me-1"></i>3 mois</span>
+              </div>
+              <p class="text-muted mb-2 fw-500"><i class="bi bi-building me-1"></i>Entreprise ANIMA</p>
+              <p class="mb-2 text-muted small"><i class="bi bi-geo-alt me-1"></i>Télétravail</p>
+              <p class="mb-3">Intégration et transformation de maquettes <strong>Figma</strong> en interfaces web fonctionnelles en utilisant <strong>HTML5 et CSS3</strong>.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border">HTML5</span>
+                <span class="badge bg-light text-dark border">CSS3</span>
+                <span class="badge bg-light text-dark border">Figma</span>
+                <span class="badge bg-light text-dark border">Stage</span>
+              </div>
+            </div>
           </div>
-          <div class="h-100 d-inline-flex align-items-center">
-            <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/tokyerick.randrianiaina"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a class="btn btn-sm-square bg-white text-primary me-1" href="www.linkedin.com/in/toky-fitiavana-erick-randrianiaina-90b636305"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a class="btn btn-sm-square bg-white text-primary me-0" href=""
-              ><i class="fab fa-instagram"></i
-            ></a>
+        </div>
+      </div>
+
+      <!-- Vendeuse -->
+      <div class="col-12">
+        <div class="exp-card card p-4">
+          <div class="d-flex flex-wrap align-items-start gap-3">
+            <div class="exp-icon"><i class="bi bi-shop"></i></div>
+            <div class="flex-grow-1">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                <h5 class="mb-0 fw-bold" style="color:var(--brand)">Vendeuse Indépendante</h5>
+                <span class="badge-duration"><i class="bi bi-cart me-1"></i>En ligne & Marché</span>
+              </div>
+              <p class="mb-3">Vente de produits en ligne via les réseaux sociaux et en présentiel au marché. Développement du sens du contact et de la communication.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border">Réseaux sociaux</span>
+                <span class="badge bg-light text-dark border">Commerce</span>
+                <span class="badge bg-light text-dark border">Communication</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Topbar End -->
+  </div>
+</section>
 
-    <!-- Navbar Start -->
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <a href="index.html" class="navbar-brand p-0">
-       
-        <h1 class="m-0 text-primary">TokyFolio</h1>
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="bg-white">
+  <div class="container">
+    <p class="section-label">Savoir-faire</p>
+    <h2 class="section-title">Compétences</h2>
+    <div class="divider"></div>
+
+    <div class="row gy-5">
+      <!-- Compétences techniques -->
+      <div class="col-lg-7">
+        <h5 class="fw-bold mb-4" style="color:var(--brand)"><i class="bi bi-cpu me-2"></i>Compétences Techniques</h5>
+        <div class="row gy-3">
+          <div class="col-12">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="fw-500">HTML5 / CSS3</span><span class="text-muted small">Avancé</span>
+            </div>
+            <div class="lang-bar-wrap">
+              <div class="lang-bar" style="width:80%"></div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="fw-500">Bootstrap 4 / 5</span><span class="text-muted small">Avancé</span>
+            </div>
+            <div class="lang-bar-wrap">
+              <div class="lang-bar" style="width:75%"></div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="fw-500">Figma</span><span class="text-muted small">Intermédiaire</span>
+            </div>
+            <div class="lang-bar-wrap">
+              <div class="lang-bar" style="width:65%"></div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="fw-500">Excel / Word / PowerPoint</span><span class="text-muted small">Intermédiaire</span>
+            </div>
+            <div class="lang-bar-wrap">
+              <div class="lang-bar" style="width:60%"></div>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="fw-bold mt-5 mb-3" style="color:var(--brand)"><i class="bi bi-translate me-2"></i>Langues</h5>
+        <div class="row gy-3">
+          <div class="col-12">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="fw-500">Malagasy</span><span class="text-muted small">Langue maternelle</span>
+            </div>
+            <div class="lang-bar-wrap">
+              <div class="lang-bar" style="width:100%"></div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="fw-500">Français</span><span class="text-muted small">Écrit, lu, parlé</span>
+            </div>
+            <div class="lang-bar-wrap">
+              <div class="lang-bar" style="width:80%"></div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="fw-500">Anglais</span><span class="text-muted small">Débutant</span>
+            </div>
+            <div class="lang-bar-wrap">
+              <div class="lang-bar" style="width:25%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft skills -->
+      <div class="col-lg-5">
+        <h5 class="fw-bold mb-4" style="color:var(--brand)"><i class="bi bi-stars me-2"></i>Qualités Personnelles</h5>
+        <div class="row gy-3">
+          <div class="col-6">
+            <div class="soft-badge">
+              <i class="bi bi-people-fill d-block fs-4 mb-1"></i>
+              Sens du contact
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="soft-badge">
+              <i class="bi bi-chat-dots-fill d-block fs-4 mb-1"></i>
+              Communication
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="soft-badge">
+              <i class="bi bi-arrow-repeat d-block fs-4 mb-1"></i>
+              Adaptabilité
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="soft-badge">
+              <i class="bi bi-layers-fill d-block fs-4 mb-1"></i>
+              Polyvalence
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="soft-badge">
+              <i class="bi bi-lightbulb-fill d-block fs-4 mb-1"></i>
+              Logique & Analyse
+            </div>
+          </div>
+        </div>
+
+        <h5 class="fw-bold mt-5 mb-3" style="color:var(--brand)"><i class="bi bi-heart me-2"></i>Centres d'intérêt</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="skill-badge"><i class="bi bi-music-note-beamed"></i>Écouter de la musique</span>
+          <span class="skill-badge"><i class="bi bi-mic-fill"></i>Chanter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORMATION ===== -->
+<section id="formation">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <p class="section-label">Études</p>
+        <h2 class="section-title">Formation</h2>
+        <div class="divider"></div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">Autodidacte</div>
+            <div class="timeline-sub">Apprentissage en autonomie – développement web</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2022 – 2023</div>
+            <div class="timeline-title">L1 en Informatique</div>
+            <div class="timeline-sub">HEI – Haute École Informatique, Ivandry</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-title">Baccalauréat Série D</div>
+            <div class="timeline-sub">Lycée Andoharanofotsy</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-title">BEPC</div>
+            <div class="timeline-sub">Diplôme du Brevet d'Études du Premier Cycle</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-title">CEPE</div>
+            <div class="timeline-sub">Certificat d'Études Primaires Élémentaires</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <p class="section-label">Outils & Stack</p>
+        <h2 class="section-title">Technologies</h2>
+        <div class="divider"></div>
+        <div class="d-flex flex-wrap gap-3">
+          <span class="skill-badge"><i class="bi bi-filetype-html"></i>HTML5</span>
+          <span class="skill-badge"><i class="bi bi-filetype-css"></i>CSS3</span>
+          <span class="skill-badge"><i class="bi bi-bootstrap-fill"></i>Bootstrap 4/5</span>
+          <span class="skill-badge"><i class="bi bi-vector-pen"></i>Figma</span>
+          <span class="skill-badge"><i class="bi bi-file-earmark-excel"></i>Excel</span>
+          <span class="skill-badge"><i class="bi bi-file-earmark-word"></i>Word</span>
+          <span class="skill-badge"><i class="bi bi-file-earmark-ppt"></i>PowerPoint</span>
+          <span class="skill-badge"><i class="bi bi-phone"></i>Responsive Design</span>
+        </div>
+
+        <!-- Quote / motivation -->
+        <div class="mt-5 p-4 rounded-3" style="background: linear-gradient(135deg, var(--brand), #a0522d); color:#fff;">
+          <i class="bi bi-quote fs-2 opacity-50"></i>
+          <p class="fst-italic mb-0 mt-2">
+            "Je suis motivée à apprendre continuellement et à apporter une réelle valeur à chaque projet auquel je contribue."
+          </p>
+          <div class="mt-3 fw-bold small opacity-75">— Hermine Patricia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-6">
+        <p class="section-label text-warning">Contact</p>
+        <h2 class="section-title">Travaillons ensemble</h2>
+        <div class="divider mx-auto" style="background:#fff"></div>
+        <p style="color:rgba(255,255,255,0.75)">Disponible pour des opportunités en intégration web. N'hésitez pas à me contacter !</p>
+      </div>
+    </div>
+    <div class="row gy-3 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="contact-item d-flex align-items-center gap-3">
+          <i class="bi bi-telephone-fill fs-4 text-warning"></i>
+          <div>
+            <div class="small opacity-75">Téléphone</div>
+            <a href="tel:0382441108">0382441108</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="contact-item d-flex align-items-center gap-3">
+          <i class="bi bi-envelope-fill fs-4 text-warning"></i>
+          <div>
+            <div class="small opacity-75">Email</div>
+            <a href="/cdn-cgi/l/email-protection#274f424e09574653554e444e4609151667404a464e4b0944484a"><span class="__cf_email__" data-cfemail="a3cbc6ca8dd3c2d7d1cac0cac28d9192e3c4cec2cacf8dc0ccce">[email&#160;protected]</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="contact-item d-flex align-items-center gap-3">
+          <i class="bi bi-geo-alt-fill fs-4 text-warning"></i>
+          <div>
+            <div class="small opacity-75">Adresse</div>
+            <span>IAV 361A Iavoloha</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="/cdn-cgi/l/email-protection#355d505c1b455441475c565c541b0704755258545c591b565a58" class="btn btn-hero btn-lg">
+        <i class="bi bi-send me-2"></i>M'envoyer un message
       </a>
-      <button
-        type="button"
-        class="navbar-toggler"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
-        <div class="navbar-nav ms-auto">
-          <a href="#acceuil" class="nav-item nav-link ">Acceuil</a>
-          <a href="#àpropos" class="nav-item nav-link">à propos</a>
-          <a href="#compétence" class="nav-item nav-link">compétences</a>
-          <a href="#réalisation" class="nav-item nav-link">Réalisations</a>
-          <a href="#contact" class="nav-item nav-link">Contact</a>
-        </div>
-        <a href="https://drive.google.com/file/d/1wKOl_r0EMBZHcWk1iawqm-BBeAKDNJXo/view?usp=drive_link" download="Toky.pdf" class="btn btn-primary"
-          >Télécharger mon CV<i class="fa fa-download ms-3"></i
-        ></a>
-      </div>
-    </nav>
-    <!-- Navbar End -->
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-dark p-0 mb-5" id="acceuil">
-      <div class="row g-0 flex-column-reverse flex-lg-row">
-        <div class="col-lg-6 p-0 wow fadeIn" data-wow-delay="0.1s">
-          <div
-            class="header-bg h-100 d-flex flex-column justify-content-center p-5"
-          >
-            <h3 class="display-4 text-light mb-5">
-              RANDRIANIAINA Toky Fitiavana Erick
-            </h3>
-            <p class="text-success">
-             <b>
-              Je suis développeur web et Infographiste, passionné par la création de solutions web efficaces et esthétiques.
-              Et
-              passionné par la création d'identités visuelles forte et mémorable
-             </b>
-            </p>
-            <div class="d-flex align-items-center pt-4 animated slideInDown">
-              <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5"
-                >Voir plus</a
-              >
-              
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-          <div class="owl-carousel header-carousel">
-            <div class="owl-carousel-item">
-              <img style="opacity: 0.8;"  class="img-fluid" src="img/Me.png" alt="" />
-            </div>
-            <div class="owl-carousel-item">
-              <img style="opacity: 0.7;" class="img-fluid" src="img/Me1.png" alt="" />
-            </div>
-           
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Header End -->
-
-    <!-- Video Modal Start -->
-    <div
-      class="modal modal-video fade"
-      id="videoModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content rounded-0">
-          <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <!-- 16:9 aspect ratio -->
-            <div class="ratio ratio-16x9">
-              <iframe
-                class="embed-responsive-item"
-                src=""
-                id="video"
-                allowfullscreen
-                allowscriptaccess="always"
-                allow="autoplay"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Video Modal End -->
-
-    <!-- About Start -->
-    <div class="container-xxl py-5" id="àpropos">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <p><span class="text-primary me-2">#</span>Bienvenu</p>
-            <h1 class="display-5 mb-4">
-              <span class="text-capitalize">à</span> propos de moi 
-             
-            </h1>
-            <p class="mb-4">
-              Je m'appelle RANDRIANIAINA Toky Fitiavana Erick,j'ai 22 ans, je suis un étudiant en informatique à l'université Advancea 
-              Passionné par le développement web et du design, j'ai acquis des compétences dans divers langages et outils. Mon objectif est de créer des sites web, des designs fonctionnels
-               et esthétiques qui répondent aux besoins de mes clients.
-            </p>
-            <h1 class="display-5 mb-4">
-              <span></span> Parcours Professionnels
-             
-            </h1>
-            <p class="mb-4">
-              J'ai effectué 3 mois de stage chez Cooperative Mirindra, où j'ai participé à la création d'une application web.
-              J'ai également effectué 3 mois de stage chez NyAla Spa, où j'ai travaillé sur la création d'un site vitrine et sur des design.
-              
-              
-            </p>
-            <a href="https://drive.google.com/file/d/1wKOl_r0EMBZHcWk1iawqm-BBeAKDNJXo/view?usp=drive_link" download="Toky.pdf" class="btn btn-primary py-3 px-5 mt-3" href="">Télécharger mon CV<i class="fa fa-download ms-3"></i
-              ></a>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="img-border">
-              <img class="img-fluid" src="img/MeAbout.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Facts Start -->
-    <div
-      class="container-xxl bg-primary facts my-5 py-5 wow fadeInUp"
-      data-wow-delay="0.1s"
-    >
-      <div class="container py-5">
-        
-      </div>
-    </div>
-    <!-- Facts End -->
-
-    <!-- Service Start -->
-    <div class="container-xxl py-5"  id="compétence">
-      <div class="container">
-        <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-          <div class="col-lg-6">
-            <p><span class="text-primary me-2">#</span>Mes compétences</p>
-            <h1 class="display-5 mb-0">
-              
-              <span class="text-primary"></span> Mes Compétences
-            </h1>
-          </div>
-          
-        </div>
-        <div class="row gy-5 gx-4">
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            
-            <h5 class="text-success mb-3"><b>HTML / CSS</b></h5>
-            <span
-              >Pour faire des front-end</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <h5 class="text-success mb-3"><b>JavaScript</b></h5>
-            <span
-              >Pour des front-end et aussi des back-end (Reactjs, nestJs, Angularjs)</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <h5 class="text-success mb-3"><b>PHP</b></h5>
-            <span
-              >Pour des Back-end (codeIgniter, laravel, symfony)</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <h5 class="text-success mb-3"><b>JAVA</b></h5>
-            <span
-              >Pour des back-end(spring, Maeven)</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <h5 class="text-success mb-3"><b>C# .NET</b></h5>
-            <span
-              >Pour des back-end (ASP.NET, WINDOWS FORMS)</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <h5 class="text-success mb-3"><b>VB.NET</b></h5>
-            <span
-              >Pour des back-end (ASP.NET, WINDOWS FORMS)</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <h5 class="text-success mb-3"><b>PYTHON</b></h5>
-            <span
-              >Pour des back-end(Django)</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <h5 class="text-success mb-3"><b>WORDPRESS</b></h5>
-            <span
-              >Pour créer des site(blog, e-commerce, site vitrine,...)</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <h5 class="text-success mb-3"><b>BOOTSTRAP</b></h5>
-            <span
-              >Librairie css et JavaScript</span
-            >
-          </div>
-          <div
-            class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <h5 class="text-success mb-3"><b>UX/UI Design</b></h5>
-            <span
-              >Créer des design en utilisant photoshop</span
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Service End -->
-
-    <!-- Réalisation Start -->
-    <div class="container-xxl py-5" id="réalisation">
-      <div class="container">
-        <div
-          class="row g-5 mb-5 align-items-end wow fadeInUp"
-          data-wow-delay="0.1s"
-        >
-          <div class="col-lg-6">
-            <p><span class="text-primary me-2">#</span>Mes Réalisations</p>
-            <h1 class="display-5 mb-0">
-              <span class="text-primary"></span> Quelques une de mes Réalisations
-            </h1>
-          </div>
-          
-        </div>
-
-        <div class="row g-4">
-          <h2 class="text-center">Site et Application web</h2>
-          <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="row g-4">
-              <div class="col-6">
-                <a class="animal-item" type="button" data-toggle="modal" data-target="#siteChat">
-                  <div class="position-relative">
-                    <img class="img-fluid" src="img/Site_Vente_chat/LandingPage.PNG" alt="" />
-                    <div class="animal-text p-4">
-                      <p class="text-white small text-uppercase mb-0">Site de Vente pour Chats en utilisant WordPress</p>
-                      <h5 class="text-white mb-0"></h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-6">
-                <a
-                class="animal-item" type="button" data-toggle="modal" data-target="#biblio"
-                >
-                  <div class="position-relative">
-                    <img class="img-fluid" src="img/Site_gestion_biblio/Dasboard.PNG" alt="" />
-                    <div class="animal-text p-4">
-                      <p class="text-white small text-uppercase mb-0">Site pour la gestion d'un Bibliothéque</p>
-                      <h5 class="text-white mb-0"></h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-6">
-                <a
-                class="animal-item" type="button" data-toggle="modal" data-target="#visite"
-                >
-                  <div class="position-relative">
-                    <img class="img-fluid" src="img/Site_Gestion_Visite/ListeDeViste.png" alt="" />
-                    <div class="animal-text p-4">
-                      <p class="text-white small text-uppercase mb-0">Site pour la gestion de visite de conformité</p>
-                      <h5 class="text-white mb-0"></h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-6">
-                <a
-                class="animal-item" type="button" data-toggle="modal" data-target="#NyAla"
-                >
-                  <div class="position-relative">
-                    <img class="img-fluid" src="img/NyAlaSpa/Acceuil.PNG" alt="" />
-                    <div class="animal-text p-4">
-                      <p class="text-white small text-uppercase mb-0">Site pour la presentation des prestations</p>
-                      <h5 class="text-white mb-0"></h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-             
-            </div>
-          </div>
-         
-        </div>
-
-        <div class="row g-4 mt-5">
-          <h2 class="text-center" data-wow-delay="0.3s">Logiciel / Desktop</h2>
-          <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="row g-4">
-              <div class="col-6">
-                <a
-                class="animal-item" type="button" data-toggle="modal" data-target="#prescription"
-                >
-                  <div class="position-relative">
-                    <img class="img-fluid" src="img/logiciel_presciption/TableauBord.png" alt="" />
-                    <div class="animal-text p-4">
-                      <p class="text-white small text-uppercase mb-0">Logiciel de gestion de préscription</p>
-                      <h5 class="text-white mb-0"></h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-6">
-                <a
-                class="animal-item" type="button" data-toggle="modal" data-target="#employer"
-                >
-                  <div class="position-relative">
-                    <img class="img-fluid" src="img/GestionEmployer/gestionEmployer.PNG" alt="" />
-                    <div class="animal-text p-4">
-                      <p class="text-white small text-uppercase mb-0">Site pour la gestion d'un Bibliothéque</p>
-                      <h5 class="text-white mb-0"></h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-             
-            </div>
-          </div>
-         
-        </div>
-
-        
-
-      </div>
-    </div>
-    <!-- Réalisation End -->
-
-    <!-- Visiting Hours Start -->
-    <div
-      class="container-xxl bg-primary visiting-hours my-5 py-5 wow fadeInUp"
-      data-wow-delay="0.1s" id="contact"
-    >
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-md-12 text-center text-light wow fadeIn" data-wow-delay="0.5s">
-            <h1 class="display-6 text-white mb-5">Contact Info</h1>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Télephone</td>
-                  <td>+261 38 68 820 96 / +261 32 46 071 01</td>
-                </tr>
-                <tr>
-                  <td>Addresse</td>
-                  <td>Lot IVB 368 Ambohimanala, Andoharanofotsy</td>
-                </tr>
-                <tr>
-                  <td>Email</td>
-                  <td>
-                    <p class="mb-2">tokyrand06@gmail.com</p>
-                    
-                  </td>
-                </tr>
-                <tr>
-                  <td>Watchapp</td>
-                  <td>
-                    
-                    <p class="mb-0">+261 38 68 820 96</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Visiting Hours End -->
-
-    
-
-    
-
-    <!-- Footer Start -->
-    <div
-      class="container-fluid footer bg-dark text-light footer mt-5 pt-5 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-lg-4 col-md-6">
-            <h5 class="text-light mb-4">Addresse</h5>
-            <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>Lot IVB 368 AMbohimanala Andoharanofotsy
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+261 38 68 820 96/ 32 46 071 01
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-envelope me-3"></i>tokyrand06@gmail.com
-            </p>
-            
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <h5 class="text-light mb-4">Liens Rapides </h5>
-            <a href="#acceuil" class="btn btn-link">Acceuil</a>
-          <a href="#àpropos" class="btn btn-link">à propos</a>
-          <a href="#compétence" class="btn btn-link">compétences</a>
-          <a href="#réalisation" class="btn btn-link">Réalisations</a>
-          <a href="#contact" class="btn btn-link">Contact</a>
-            
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <a href="index.html" class="navbar-brand p-0">
-       
-              <h1 class="m-0 text-primary">TokyFolio</h1>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">TokyFolio</a>2025
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-              Coder avec
-              <a class="border-bottom" 
-                >HTML css</a
-              >
-              <br />créet par:
-              <a  target="_blank">Toky</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    
-
-<!-- jQuery library -->
-
-
-<!-- Popper JS -->
-
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-  </body>
-</html>
-
-
-<!-- Modal start -->
-
-
-<div class="modal" id="siteChat" >
- <div class="row">
-  <div class="col-md-12">
-    <div class="">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Site de vente pour chat</h4>
-          <button type="button" class="close border-none" data-dismiss="modal">&times;</button>
-        </div>
-       <div class="container-fluid">
-            <div class="intro">
-              <h3 class="text-success">
-                <b>
-                  Description:
-                </b>
-              </h3>
-              <p class="text-*-center">
-                Un site de vente dédié à la vente de chats, où les utilisateurs peuvent parcourir les différentes races,
-                en apprendre davantage sur chaque animal et effectuer des achats en ligne en toute sécurité. Le site inclut
-                des fonctionnalités telles qu'un système de filtrage, des descriptions détaillées des chats, et une interface 
-                conviviale pour une expérience utilisateur optimale. <br>
-                <span class="text-success">Téchnologie utilisées :</span> Wordpress (Elémentor, WooCommerce, WpForm,Blocsky), Laragon(serveur)
-              </p>
-            </div>
-
-            <div class="visuel">
-              <h3 class="text-success">
-                <b>
-                  Presentation visuelle:
-                </b>
-              </h3>
-              <div class="text-center image mt-1">
-                <img src="img/Site_Vente_chat/LandingPage.PNG" class="img-fluid" alt="img/Site_Vente_chat/LandingPage.PNG">
-                <img src="img/Site_Vente_chat/CategorieChat.PNG" class="img-fluid" alt="">
-                <img src="img/Site_Vente_chat/lesChats.PNG" class="img-fluid" alt="">
-                <img src="img/Site_Vente_chat/Meilleur vente.PNG" class="img-fluid" alt="">
-                <img src="img/Site_Vente_chat/listeDesChat.PNG" class="img-fluid" alt="">
-                <img src="img/Site_Vente_chat/Pannier.PNG" class="img-fluid" alt="">
-                <img src="img/Site_Vente_chat/commande.png" class="img-fluid" alt="">
-
-              </div>
-            </div>
-        </div>
-      </div>
     </div>
   </div>
- </div>
-</div>
+</section>
 
-
-<div class="modal" id="biblio">
-  <div class="row">
-   <div class="col-md-12">
-     <div class="">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h4 class="modal-title">Site pour la gestion d'un bibliothèque</h4>
-           <button type="button" class="close border-none" data-dismiss="modal">&times;</button>
-         </div>
-        <div class="container-fluid">
-             <div class="intro">
-               <h3 class="text-success">
-                 <b>
-                   Description:
-                 </b>
-               </h3>
-               <p class="text-*-center">
-                 Un site de vente dédié à la emprunt de livre dans une bibliothèque, où les utilisateurs peuvent parcourir les différentes types de livre,
-                 choisur les livres qu'ils veulent emprunter, ajouter de nouveau livre, et il y a aussi des détails pour chaques livres.
-                 <br>
-                 <span class="text-success">Téchnologie utilisées :</span> java, spring boot, html/css, xamp.
-               </p>
-             </div>
- 
-             <div class="visuel">
-               <h3 class="text-success">
-                 <b>
-                   Presentation visuelle:
-                 </b>
-               </h3>
-               <div class="text-center image mt-1">
-                 <img src="img/Site_gestion_biblio/utilisateur/login.PNG" class="img-fluid " alt=""><br>
-                 <img src="img/Site_gestion_biblio/Dasboard.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/utilisateur/UserRegistration.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/utilisateur/ListeUtilisateur.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/utilisateur/showUser.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/livre/liste_book.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/livre/BookRegistration.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/livre/BookUpdate.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/livre/BookShow.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/emprunt/listeEmprunt.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/emprunt/EmpruntRegister.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/emprunt/showEmprunt.PNG" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/Site_gestion_biblio/emprunt/editEmprunt.PNG" class="img-fluid mt-2" alt=""><br>
-               </div>
-             </div>
-         </div>
-       </div>
-     </div>
-   </div>
+<!-- ===== FOOTER ===== -->
+<footer class="text-center">
+  <div class="container">
+    <p class="mb-0">© 2024 Hermine Patricia Andrianarilanto — Portfolio réalisé avec Bootstrap 5</p>
   </div>
- </div>
+</footer>
 
- <div class="modal" id="visite" >
-  <div class="row">
-   <div class="col-md-12">
-     <div class="">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h4 class="modal-title">Site pour la gestion de visite de conformité pour les véhicules</h4>
-           <button type="button" class="close border-none" data-dismiss="modal">&times;</button>
-         </div>
-        <div class="container-fluid">
-             <div class="intro">
-               <h3 class="text-success">
-                 <b>
-                   Description:
-                 </b>
-               </h3>
-               <p class="text-*-center">
-                un système d’information capable de gérer et d’enregistrer
-                l’ensemble de visite de conformité de chaque bus pour chaque coopérative., l'utilisateur peut ajouter, modifier, parcourir, supprimer des données <br>
-                 <span class="text-success">Téchnologie utilisées :</span> codeIgniter3, php, xamp.
-               </p>
-             </div>
- 
-             <div class="visuel">
-               <h3 class="text-success">
-                 <b>
-                   Presentation visuelle:
-                 </b>
-               </h3>
-               <div class="text-center image mt-1">
-                <img src="img/Site_Gestion_Visite/login.png" class="img-fluid " alt=""><br>
-                <img src="img/Site_Gestion_Visite/dasboard.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/listeUtilisateur.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/addUser.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/updateUser.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/searchLicence.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/ficheLicence.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/listeCooperative.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/addLigne.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/addVisite.png" class="img-fluid mt-2" alt=""><br>
-                <img src="img/Site_Gestion_Visite/ListeDeViste.png" class="img-fluid mt-2" alt=""><br>
+<!-- Bootstrap JS -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close mobile nav
+        const nav = document.getElementById('navMenu');
+        if (nav.classList.contains('show')) {
+          new bootstrap.Collapse(nav).hide();
+        }
+      }
+    });
+  });
 
- 
-               </div>
-             </div>
-         </div>
-       </div>
-     </div>
-   </div>
-  </div>
- </div>
-
- <div class="modal" id="NyAla" >
-  <div class="row">
-   <div class="col-md-12">
-     <div class="">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h4 class="modal-title">Site vitrine pour afficher les prestations chez NyAla SPA</h4>
-           <button type="button" class="close border-none" data-dismiss="modal">&times;</button>
-         </div>
-        <div class="container-fluid">
-             <div class="intro">
-               <h3 class="text-success">
-                 <b>
-                   Description:
-                 </b>
-               </h3>
-               <p class="text-*-center">
-                un site vitrine qui affiche toutes les prestations de l'entreprise NyAla Spa avec ses détails respectifs et des images attirantes pour les visiteurs <br>
-                 <span class="text-success">Téchnologie utilisées :</span> symfony,php,xamp.
-               </p>
-             </div>
- 
-             <div class="visuel">
-               <h3 class="text-success">
-                 <b>
-                   Presentation visuelle:
-                 </b>
-               </h3>
-               <div class="text-center image mt-1">
-                <img src="img/NyAlaSpa/Acceuil.PNG" class="img-fluid " alt=""><br>
-                <img src="img/NyAlaSpa/Prestation.PNG" class="img-fluid mt-2" alt=""><br>
-                <img src="img/NyAlaSpa/Massage.PNG" class="img-fluid mt-2" alt=""><br>
-                <img src="img/NyAlaSpa/About.PNG" class="img-fluid mt-2" alt=""><br>
-                
-                
-
- 
-               </div>
-             </div>
-         </div>
-       </div>
-     </div>
-   </div>
-  </div>
- </div>
-
- <div class="modal" id="prescription">
-  <div class="row">
-   <div class="col-md-12">
-     <div class="">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h4 class="modal-title">Logiciel de prescription des patients dans un hospital</h4>
-           <button type="button" class="close border-none" data-dismiss="modal">&times;</button>
-         </div>
-        <div class="container-fluid">
-             <div class="intro">
-               <h3 class="text-success">
-                 <b>
-                   Description:
-                 </b>
-               </h3>
-               <p class="text-*-center">
-                Un logiciel de préscription des patients dans un hospital, où les
-                 utilisateurs peuvent parcourir la listes des patients, des docteurs, des receptionnistes et des prescriptions.
-                 <br>
-                 <span class="text-success">Téchnologie utilisées :</span> C#, visual studio 2019, laragon.
-               </p>
-             </div>
- 
-             <div class="visuel">
-               <h3 class="text-success">
-                 <b>
-                   Presentation visuelle:
-                 </b>
-               </h3>
-               <div class="text-center image mt-1">
-                 <img src="img/logiciel_presciption/login.png" class="img-fluid " alt=""><br>
-                 <img src="img/logiciel_presciption/TableauBord.png" class="img-fluid " alt=""><br>
-                 <img src="img/logiciel_presciption/ListDoctor.png" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/logiciel_presciption/ListeReceptionniste.png" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/logiciel_presciption/ListPatient.png" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/logiciel_presciption/ListeLaboratoire.png" class="img-fluid mt-2" alt=""><br>
-                 <img src="img/logiciel_presciption/prescription.png" class="img-fluid mt-2" alt=""><br>
-                
-               </div>
-             </div>
-         </div>
-       </div>
-     </div>
-   </div>
-  </div>
- </div>
-
- <div class="modal" id="employer">
-  <div class="row">
-   <div class="col-md-12">
-     <div class="">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h4 class="modal-title">Logiciel de gestion d'employer</h4>
-           <button type="button" class="close border-none" data-dismiss="modal">&times;</button>
-         </div>
-        <div class="container-fluid">
-             <div class="intro">
-               <h3 class="text-success">
-                 <b>
-                   Description:
-                 </b>
-               </h3>
-               <p class="text-*-center">
-                Un logiciel de gestion d'employer où les utilisateurs peuvent ajouter, supprimer, modifier, rechercher des employés
-                 <br>
-                 <span class="text-success">Téchnologie utilisées :</span> VB.NET, visual studio 2019, laragon.
-               </p>
-             </div>
- 
-             <div class="visuel">
-               <h3 class="text-success">
-                 <b>
-                   Presentation visuelle:
-                 </b>
-               </h3>
-               <div class="text-center image mt-1">
-                 <img src="img/GestionEmployer/gestionEmployer.PNG" class="img-fluid " alt=""><br>
-                 
-                
-               </div>
-             </div>
-         </div>
-       </div>
-     </div>
-   </div>
-  </div>
- </div>
-
-
-
-<!-- Modal End -->
+  // Navbar active link highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener(
